@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +8,6 @@ namespace ContactsApp
     class Program
     {
         static void Main(string[] args)
-        {
-             static void Main(string[] args)
         {
             List<Contact> danhba = new List<Contact>();
 
@@ -51,5 +49,5 @@ namespace ContactsApp
             Console.ReadLine();
         }
 
-            
+    }  
 }
