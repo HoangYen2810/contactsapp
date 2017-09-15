@@ -9,7 +9,14 @@ namespace ContactsApp
     {
         static void Main(string[] args)
         {
+             static void Main(string[] args)
+        {
             List<Contact> danhba = new List<Contact>();
+
+            // doc du lieu tu file
+            if (File.Exists("contacts.txt"))
+                XulyFiledung.LayDuLieuTuFile(danhba);
+
             char r;
             do
             {
@@ -39,7 +46,10 @@ namespace ContactsApp
                                  c.GetDiaChi(),
                                  c.GetSDT());
             }
+
+            XulyFiledung.LuuDuLieuRaFile(danhba);
             Console.ReadLine();
         }
-    }
+
+            
 }
