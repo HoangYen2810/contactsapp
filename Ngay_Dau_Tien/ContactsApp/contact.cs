@@ -1,63 +1,52 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
 
-namespace ContactsApp
+namespace Contacts
 {
-    class Contact
+    class Program
     {
-        string ho;
-  string ten;
-  string diachi;
-  string sdt;
+        static void Main(string[] args)
+        {
+            List<Contact> danhba = new List<Contact>();
 
-  public Contact(string ho, string ten, string diachi, string sdt)
-  {
-      this.ho = ho;
-      this.ten = ten;
-      this.diachi = diachi;
-      this.sdt = sdt;
-  }
+            // doc du lieu tu file
+            if (File.Exists("contacts.txt"))
+                XuLyFile.LayDuLieuTuFile(danhba);
 
-  public void SetHo(string ho)
-  {
-      this.ho = ho;
-  }
+            char r;
+            do
+            {
+                Console.WriteLine("\nMoi nhap thong tin lien lac:");
+                Console.Write("Moi nhap ho:");
+                string ho = Console.ReadLine();
+                Console.Write("Moi nhap ten:");
+                string ten = Console.ReadLine();
+                Console.Write("Moi nhap dia chi:");
+                string diachi = Console.ReadLine();
+                Console.Write("Moi nhap so dien thoai:");
+                string sdt = Console.ReadLine();
 
-  public string GetHo()
-  {
-      return this.ho;
-  }
+                Contact co = new Contact(ho, ten, diachi, sdt);
+                danhba.Add(co);
 
-  public void SetTen(string ten)
-  {
-      this.ten = ten;
-  }
+                Console.Write("Ban co muon tiep tuc nhap hay khong (y/n) ? ");
+                r = Console.ReadKey().KeyChar;
+            } while (r == 'y');
 
-  public string GetTen()
-  {
-      return this.ten;
-  }
+            Console.WriteLine("\n\nDanh ba da nhap gom:");
+            foreach (Contact c in danhba)
+            {
+                Console.WriteLine("{0} - {1} - {2} - {3}",
+                                 c.Ho,
+                                 c.Ten,
+                                 c.DiaChi,
+                                 c.SDT);
+            }
 
-  public void SetDiaChi(string diachi)
-  {
-      this.diachi = diachi;
-  }
-
-  public string GetDiaChi()
-  {
-      return this.diachi;
-  }
-
-  public void SetSDT(string sdt)
-  {
-      this.sdt = sdt;
-  }
-
-  public string GetSDT()
-  {
-      return this.sdt;
-  }
+            
+            Console.ReadLine();
+        }
     }
 }
