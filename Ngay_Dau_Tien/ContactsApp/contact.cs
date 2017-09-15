@@ -1,52 +1,38 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.IO;
-
-namespace Contacts
+﻿class Contact
 {
-    class Program
+    string ho;
+    public string Ho
     {
-        static void Main(string[] args)
-        {
-            List<Contact> danhba = new List<Contact>();
+        get { return ho; }
+        set { ho = value; }
+    }
 
-            // doc du lieu tu file
-            if (File.Exists("contacts.txt"))
-                XuLyFile.LayDuLieuTuFile(danhba);
+    string ten;
+    public string Ten
+    {
+        get { return ten; }
+        set { ten = value; }
+    }
 
-            char r;
-            do
-            {
-                Console.WriteLine("\nMoi nhap thong tin lien lac:");
-                Console.Write("Moi nhap ho:");
-                string ho = Console.ReadLine();
-                Console.Write("Moi nhap ten:");
-                string ten = Console.ReadLine();
-                Console.Write("Moi nhap dia chi:");
-                string diachi = Console.ReadLine();
-                Console.Write("Moi nhap so dien thoai:");
-                string sdt = Console.ReadLine();
+    string diachi;
+    public string DiaChi
+    {
+        get { return diachi; }
+        set { diachi = value; }
+    }
 
-                Contact co = new Contact(ho, ten, diachi, sdt);
-                danhba.Add(co);
+    string sdt;
+    public string SDT
+    {
+        get { return sdt; }
+        set { sdt = value; }
+    }
 
-                Console.Write("Ban co muon tiep tuc nhap hay khong (y/n) ? ");
-                r = Console.ReadKey().KeyChar;
-            } while (r == 'y');
-
-            Console.WriteLine("\n\nDanh ba da nhap gom:");
-            foreach (Contact c in danhba)
-            {
-                Console.WriteLine("{0} - {1} - {2} - {3}",
-                                 c.Ho,
-                                 c.Ten,
-                                 c.DiaChi,
-                                 c.SDT);
-            }
-
-            
-            Console.ReadLine();
-        }
+    public Contact(string ho, string ten, string diachi, string sdt)
+    {
+        this.ho = ho;
+        this.ten = ten;
+        this.diachi = diachi;
+        this.sdt = sdt;
     }
 }

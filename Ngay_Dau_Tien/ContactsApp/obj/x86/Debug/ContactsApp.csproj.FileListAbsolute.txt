@@ -6,3 +6,5 @@ F:\github\contactsapp\Ngay_Dau_Tien\ContactsApp\obj\x86\Debug\ContactsApp.pdb
 D:\github\Ngay_Dau_Tien\ContactsApp\obj\x86\Debug\ContactsApp.exe
 D:\github\Ngay_Dau_Tien\ContactsApp\obj\x86\Debug\ContactsApp.pdb
 D:\github\Ngay_Dau_Tien\ContactsApp\obj\x86\Debug\ContactsApp.csprojResolveAssemblyReference.cache
+D:\contactsapp\Ngay_Dau_Tien\ContactsApp\obj\x86\Debug\ContactsApp.exe
+D:\contactsapp\Ngay_Dau_Tien\ContactsApp\obj\x86\Debug\ContactsApp.pdb
